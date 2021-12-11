@@ -1,0 +1,10 @@
+version: "3" ## especifica a versão do docker-compose file
+
+services: ## Define um serviço
+  nodejs: ## nome do serviço
+    build: . ## localização do dockerfile
+    command: npm start ## comando a executar
+    ports:
+      - "3000:3333" ## redirecionamento de porta quando chegar alguma requisição na porta 3333 chama o container na porta 3333
+    volumes:
+      - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app

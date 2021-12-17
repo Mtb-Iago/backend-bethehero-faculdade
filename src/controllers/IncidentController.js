@@ -25,8 +25,7 @@ module.exports = {
         return response.json(incidents);
     },
     async create(request, response) {
-        const { title, description, value } = request.body; //tipo os parametros do construtor
-        const ong_id = request.headers.authorization; //busca o id de autorização no postman
+        const { title, description, value, ong_id } = request.body; //tipo os parametros do construtor
 
         const [id] = await connection('incidents').insert({ //inseri no banco de dados
             title,

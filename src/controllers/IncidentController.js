@@ -5,13 +5,8 @@ module.exports = {
         
         const [count] = await connection('incidents')
         .count(); //função para contar o total de itens
-        console.log(count);
-        const { page = 1 } = request.query; //buscar dados da pagina 1
-
         const incidents = await connection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id') //compara os ids para e trazendo os dados do incidente
-            .limit(5) //esquema de paginazação limita 5 itens por pagina
-            .offset((page - 1) * 5)
             .select('incidents.*', //incidents pega todos os dados, porem de ongs busca os listados
                 'ongs.name',
                 'ongs.email',

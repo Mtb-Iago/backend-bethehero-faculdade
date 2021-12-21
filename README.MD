@@ -1,18 +1,18 @@
 # Back end and Nodejs Be-the-Hero with Docker 
 
 
-## Setiing .env
+## Setting .env
 
 ## Docker run
 
 ```bash
-docker-compose up -d --build
+docker-compose up --build
 ```
 
 ## Run Back end app
 
 ```bash
-docker-compose start
+docker-compose up
 ```
 
 ```bash
